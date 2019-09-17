@@ -12,7 +12,7 @@
 #define WINDOW_HEIGHT 500
 #define MS_PER_S 1e3
 #define FONT_SIZE 24
-#define FONT_DIR "../font.ttf"  // May have to change to full file path
+#define FONT_DIR "../font/font.ttf"  // May have to change to full file path
 #define TEXT_COLOR (SDL_Color) {255, 255, 255, 0}
 
 /**
@@ -207,20 +207,22 @@ double time_since_last_tick(void) {
     return difference;
 }
 
-void get_text_and_rect(int x, int y, char *text,
-    SDL_Texture **texture, SDL_Rect *rect) {
-    int text_width;
-    int text_height;
-    SDL_Surface *surface;
+void get_text_and_rect(int x, int y, char *text, SDL_Texture **texture,
+  SDL_Rect *rect) {
+    TTF_Font *font = TTF_OpenFont(FONT_DIR, FONT_SIZE);
+
+    if (font == NULL) {
+      printf("Error: Could not open font from %s\n", FONT_DIR);
+      exit(1);
+    }
 
     SDL_Color textColor = TEXT_COLOR;
-    TTF_Font *font = TTF_OpenFont(FONT_DIR, FONT_SIZE);
-    surface = TTF_RenderText_Solid(font, text, textColor);
+    SDL_Surface *surface = TTF_RenderText_Solid(font, text, textColor);
     TTF_CloseFont(font);
 
     *texture = SDL_CreateTextureFromSurface(renderer, surface);
-    text_width = surface->w;
-    text_height = surface->h;
+    int text_width = surface->w;
+    int text_height = surface->h;
     SDL_FreeSurface(surface);
     rect->x = x;
     rect->y = y;

@@ -114,7 +114,8 @@ CollisionInfo check_collisions(List *shape1, List *shape2, double *overlap) {
 }
 
 /**
- * Checks whether there exists a separating axis between two polygons
+ * Checks if two polygons collide using Separating Axis (checks whether there
+ * exists a separating axis between two polygons).
  *
  * @param shape1, list of vectors
  * @param shape2, list of vectors
