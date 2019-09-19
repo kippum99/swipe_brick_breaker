@@ -1,9 +1,6 @@
 # Swipe Brick Breaker
 Recreation of mobile game Swipe Brick Breaker with additional features in C
 
-## Dependencies
-
-
 ## Installation
 
 ### Dependencies
