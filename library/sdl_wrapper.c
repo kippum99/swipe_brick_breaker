@@ -7,7 +7,7 @@
 #include <time.h>
 #include "sdl_wrapper.h"
 
-#define WINDOW_TITLE "CS 3"
+#define WINDOW_TITLE "Swipe Brick Breaker"
 #define WINDOW_WIDTH 1000
 #define WINDOW_HEIGHT 500
 #define MS_PER_S 1e3
