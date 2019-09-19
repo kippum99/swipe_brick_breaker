@@ -32,5 +32,5 @@ This game has extra collectibles as additional features to the original game.
 - Bomb (Red Star) - Destroys all bricks in the screen
 - Life (Green Cross) - Gives an extra life that saves you from losing once (collected on the right side)
 
-## Gameplay Screenshot
+
 ![](screenshot.png)
